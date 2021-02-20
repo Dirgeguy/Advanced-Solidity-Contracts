@@ -7,11 +7,11 @@ import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/crowdsale/validation/TimedCrowdsale.sol";
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/crowdsale/distribution/RefundablePostDeliveryCrowdsale.sol";
 
-// @TODO: Inherit the crowdsale contracts
+// Inherit the crowdsale contracts
 contract PupperCoinSale is Crowdsale, MintedCrowdsale, CappedCrowdsale, TimedCrowdsale, RefundablePostDeliveryCrowdsale {
         
     constructor(
-        // @TODO: Fill in the constructor parameters!
+        
         uint rate,
         address payable wallet,
         PupperCoin token,
@@ -20,7 +20,7 @@ contract PupperCoinSale is Crowdsale, MintedCrowdsale, CappedCrowdsale, TimedCro
         uint opentime,
         uint closetime
     )
-        // @TODO: Pass the constructor parameters to the crowdsale contracts.
+        // Pass the constructor parameters to the crowdsale contracts.
         Crowdsale(rate, wallet, token)
         CappedCrowdsale(goal)
         TimedCrowdsale(opentime, closetime)
