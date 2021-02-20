@@ -13,6 +13,6 @@ contract PupperCoin is ERC20, ERC20Detailed, ERC20Mintable {
         ERC20Detailed(name, symbol, 18)
         public
     {
-        // constructor can stay empty
+        // Constructor can stay empty
     }
 }
