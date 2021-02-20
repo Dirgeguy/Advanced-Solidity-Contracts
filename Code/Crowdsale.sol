@@ -28,7 +28,7 @@ contract PupperCoinSale is Crowdsale, MintedCrowdsale, CappedCrowdsale, TimedCro
         public
     
     {
-        // constructor can stay empty
+    
     }
 }
 
@@ -38,7 +38,7 @@ contract PupperCoinSaleDeployer {
     address public token_address;
 
     constructor(
-        // @TODO: Fill in the constructor parameters!
+  
         string memory name,
         string memory symbol,
         address payable wallet, // this address will receive all ETH raised by the sale
@@ -47,16 +47,15 @@ contract PupperCoinSaleDeployer {
     )
         public
     {
-        // @TODO: create the PupperCoin and keep its address handy
         
         PupperCoin token = new PupperCoin(name, symbol, 0);
         token_address = address(token);
 
-        // @TODO: create the PupperCoinSale and tell it about the token, set the goal, and set the open and close times to now and now + 24 weeks.
+        // Create the PupperCoinSale and tell it about the token, set the goal, and set the open and close times.
         PupperCoinSale token_sale = new PupperCoinSale(1, wallet, token, goal, now, now + 24 weeks);
         token_sale_address = address(token_sale);
         
-        // make the PupperCoinSale contract a minter, then have the PupperCoinSaleDeployer renounce its minter role
+        // PupperCoinSale contract a minter, then have the PupperCoinSaleDeployer renounce its minter role
         token.addMinter(token_sale_address);
         token.renounceMinter();
     }
